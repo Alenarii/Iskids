@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.clear.ClearFragment"
+    android:background="@color/light">
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="89dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/Warning_Delete"
+        android:fontFamily="@font/bureauap"
+        android:textSize="28sp"
+        android:textColor="@color/green_black"
+        android:lineHeight="45sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerDayDel"
+        android:layout_width="170dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerSubDel"
+        app:layout_constraintEnd_toStartOf="@+id/BtnDelHWOne"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+    <Button
+        android:id="@+id/BtnDelHW"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/buttonshape"
+        android:text="Удалить всё д/з"
+        android:textColor="@color/green_black"
+        app:layout_constraintBottom_toTopOf="@+id/BtnDelHWOne"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <Button
+        android:id="@+id/BtnDelHWOne"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/buttonshape"
+        android:text="@string/DelHWOne"
+        android:textColor="@color/green_black"
+        app:layout_constraintBottom_toTopOf="@+id/BtnDelSubOne"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerSubDel"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/BtnDelSub"
+        app:layout_constraintEnd_toStartOf="@+id/BtnDelSubOne"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/BtnDelSubOne"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/buttonshape"
+        android:text="@string/DelSubOne"
+        android:textColor="@color/green_black"
+        app:layout_constraintBottom_toTopOf="@+id/BtnDelSub"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <Button
+        android:id="@+id/BtnDelSub"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/buttonshape"
+        android:text="@string/Delete_Sub"
+        android:textColor="@color/green_black"
+        app:layout_constraintBottom_toTopOf="@+id/BtnDelRas" />
+
+    <Button
+        android:id="@+id/BtnDelRas"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/buttonshape"
+        android:text="@string/Delet_Ras"
+        android:textColor="@color/green_black"
+        app:layout_constraintBottom_toTopOf="@+id/BtnDelAll" />
+
+    <Button
+        android:id="@+id/BtnDelAll"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/buttonshape"
+        android:text="@string/Delet_All"
+        android:textColor="@color/green_black"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

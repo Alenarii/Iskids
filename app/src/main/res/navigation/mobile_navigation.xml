@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_start">
+
+    <fragment
+        android:id="@+id/nav_start"
+        android:name="com.example.my.ui.start.StartFragment"
+        android:label=""
+        tools:layout="@layout/fragment_start" />
+
+    <fragment
+        android:id="@+id/nav_timer"
+        android:name="com.example.my.ui.timer.TimerFragment"
+        android:label="@string/Timer"
+        tools:layout="@layout/fragment_timer"
+        />
+    <fragment
+        android:id="@+id/nav_add"
+        android:name="com.example.my.AddSubFragment"
+        android:label="@string/AddSub"
+        tools:layout="@layout/fragment_add_sub"
+        />
+    <fragment
+        android:id="@+id/nav_sub"
+        android:name="com.example.my.ui.subjects.SubjectsFragment"
+        android:label="@string/Sub"
+        tools:layout="@layout/fragment_subjects"
+        />
+    <fragment
+        android:id="@+id/nav_add_ras"
+        android:name="com.example.my.ui.add_ras.AddRasFragment"
+        android:label="@string/AddRass"
+        tools:layout="@layout/fragment_add_ras"
+        />
+    <fragment
+        android:id="@+id/nav_ras"
+        android:name="com.example.my.ui.ras.RasFragment"
+        android:label="@string/Ras"
+        tools:layout="@layout/fragment_ras"
+        />
+    <fragment
+        android:id="@+id/nav_add_hw"
+        android:name="com.example.my.ui.add_homework.AddHomeWorkFragment"
+        android:label="@string/AddHw"
+        tools:layout="@layout/fragment_add_home_work"
+        />
+    <fragment
+        android:id="@+id/nav_clear"
+        android:name="com.example.my.ui.clear.ClearFragment"
+        android:label="@string/Clear"
+        tools:layout="@layout/fragment_clear"
+        />
+</navigation>

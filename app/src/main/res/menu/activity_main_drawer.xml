@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_start"
+            android:icon="@drawable/house"
+            android:title="@string/Home_page" />
+        <item
+            android:id="@+id/nav_timer"
+            android:icon="@drawable/stopwatch"
+            android:title="@string/Timer" />
+        <item
+            android:id="@+id/nav_ras"
+            android:icon="@drawable/timer"
+            android:title="@string/Ras" />
+        <item
+            android:id="@+id/nav_sub"
+            android:icon="@drawable/book"
+            android:title="@string/Sub" />
+        <item
+            android:id="@+id/nav_add_hw"
+            android:icon="@drawable/write"
+            android:title="@string/AddHw" />
+        <item
+            android:id="@+id/nav_add"
+            android:icon="@drawable/plus"
+            android:title="@string/AddSub" />
+
+        <item
+            android:id="@+id/nav_add_ras"
+            android:icon="@drawable/plus"
+            android:title="@string/AddRass" />
+
+
+        <item
+            android:id="@+id/nav_clear"
+            android:icon="@drawable/delete"
+            android:title="@string/Clear" />
+    </group>
+</menu>
