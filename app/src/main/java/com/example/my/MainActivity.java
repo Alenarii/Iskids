@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_start, R.id.nav_timer, R.id.nav_ras,
                 R.id.nav_sub, R.id.nav_add_hw, R.id.nav_add,
-                R.id.nav_add_ras, R.id.nav_clear)
+                R.id.nav_add_ras, R.id.nav_clear, R.id.nav_about)
                 .setOpenableLayout(drawer)
                 .build();
 
@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 

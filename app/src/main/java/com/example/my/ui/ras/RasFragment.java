@@ -71,10 +71,7 @@ public class RasFragment extends ListFragment {
     public void onListItemClick(ListView l, View v, int position, long id) {
         dialog.setCancelable(true);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
         String rrr = itemDay + " " + mAdapter.getItem(position);
-
-
         CustomDialogRas dialog = new CustomDialogRas();
         Bundle args = new Bundle();
         args.putString("ras", rrr);

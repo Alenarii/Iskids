@@ -31,7 +31,7 @@ public class CustomDialogRas extends DialogFragment {
         return builder
                     .setTitle(rr[1])
                     .setIcon(R.drawable.tt)
-                    .setMessage("Урок: " + nn.get(0) + "\n" +
+                    .setMessage("Урок: " + rr[1] + "\n" +
                             "Преподаватель: " + nn.get(0) + "\n"
                             + "Кабинет: " + nn.get(1) + "\n" +
                             "Домашнее задание: " + n)

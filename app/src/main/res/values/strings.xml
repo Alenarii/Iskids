@@ -45,5 +45,6 @@
     <string name="AddSubToastNo">Такой предмет уже есть. Введите другое название.</string>
     <string name="DelSubOne">Удалить предмет</string>
     <string name="DelHWOne">Удалить д/з</string>
+    <string name="About">О приложении</string>
 
 </resources>

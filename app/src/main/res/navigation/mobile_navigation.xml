@@ -53,4 +53,10 @@
         android:label="@string/Clear"
         tools:layout="@layout/fragment_clear"
         />
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.example.my.ui.about.AboutFragment"
+        android:label="@string/About"
+        tools:layout="@layout/fragment_about"
+        />
 </navigation>

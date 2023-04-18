@@ -41,7 +41,7 @@
             android:title="@string/Clear" />
         <item
             android:id="@+id/nav_about"
-            android:icon="@drawable/delete"
-            android:title="@string/Clear" />
+            android:icon="@drawable/note"
+            android:title="@string/About" />
     </group>
 </menu>
