@@ -9,18 +9,15 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
-import com.example.my.R;
-import com.example.my.ui.BasaData.DBHelper_Sub;
-
-import java.util.ArrayList;
+import com.example.my.ui.BasaData.DBHelper;
 
 public class CustomDialogDelete extends DialogFragment {
-    DBHelper_Sub dbHelper;
+    DBHelper dbHelper;
     @NonNull
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         String de = getArguments().getString("del");
         String[] dee = de.split("//");
-        dbHelper = new DBHelper_Sub(getContext());
+        dbHelper = new DBHelper(getContext());
         AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
         builder
                 .setTitle("Диалоговое окно")
@@ -65,6 +62,16 @@ public class CustomDialogDelete extends DialogFragment {
                 public void onClick(DialogInterface dialogInterface, int i) {
                     dbHelper.CleanSubOne(getContext(), dee[1]);
                     Toast.makeText(getContext(), "Вы успешно удалили предмет: " + dee[1], Toast.LENGTH_SHORT).show();
+                }
+            });
+            break;
+        }
+        case ("Удалить расписание на день"):{
+            builder.setPositiveButton("Да", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dbHelper.CleanRasOne(dee[1]);
+                    Toast.makeText(getContext(), "Вы успешно удалили расписание на день: " + dee[1], Toast.LENGTH_SHORT).show();
                 }
             });
             break;

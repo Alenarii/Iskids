@@ -13,15 +13,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.my.R;
-import com.example.my.ui.BasaData.DBHelper_Sub;
+import com.example.my.ui.BasaData.DBHelper;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -29,7 +27,7 @@ import java.util.Set;
 public class StartFragment extends Fragment {
     Button sho;
     BottomSheetDialog dialog;
-    DBHelper_Sub dbHelper;
+    DBHelper dbHelper;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -54,9 +52,9 @@ public class StartFragment extends Fragment {
         View view = getLayoutInflater().inflate(R.layout.bottomsheetlayout, null, false);
         Button subl = view.findViewById(R.id.BtnAddHomeWork_2);
 
-        dbHelper = new DBHelper_Sub(getContext());
+        dbHelper = new DBHelper(getContext());
 
-        dbHelper = new DBHelper_Sub(getContext());
+        dbHelper = new DBHelper(getContext());
 
         ArrayList<String> NamesListDay = new ArrayList<>(dbHelper.ReadDay(getContext()));
         String[] smday = NamesListDay.toArray(new String[0]);

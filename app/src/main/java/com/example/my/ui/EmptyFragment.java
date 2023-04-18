@@ -1,6 +1,5 @@
 package com.example.my.ui;
 
-import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,11 +10,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.my.ui.BasaData.DBHelper_Sub;
+import com.example.my.ui.BasaData.DBHelper;
 import com.example.my.R;
 
 public class EmptyFragment extends Fragment implements View.OnClickListener {
-    DBHelper_Sub dbHelper_sub;
+    DBHelper dbHelper_;
 
     TextView textView;
     @Override
@@ -25,7 +24,7 @@ public class EmptyFragment extends Fragment implements View.OnClickListener {
         textView = view.findViewById(R.id.textView6);
         Button button = view.findViewById(R.id.button);
         button.setOnClickListener(this);
-        dbHelper_sub = new DBHelper_Sub(getContext());
+        dbHelper_ = new DBHelper(getContext());
 
         return view;
     }

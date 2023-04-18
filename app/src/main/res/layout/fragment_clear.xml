@@ -59,8 +59,8 @@
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/BtnDelSub"
-        app:layout_constraintEnd_toStartOf="@+id/BtnDelSubOne"
+        app:layout_constraintBottom_toTopOf="@+id/BtnDelRasOne"
+        app:layout_constraintEnd_toStartOf="@+id/BtnDelRasOne"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -71,6 +71,29 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/buttonshape"
         android:text="@string/DelSubOne"
+        android:textColor="@color/green_black"
+        app:layout_constraintBottom_toTopOf="@+id/BtnDelRasOne"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <Spinner
+        android:id="@+id/spinnerRasOneDel"
+        android:layout_width="170dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/BtnDelSub"
+        app:layout_constraintEnd_toStartOf="@+id/BtnDelSubOne"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/BtnDelRasOne"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:textSize="13sp"
+        android:background="@drawable/buttonshape"
+        android:text="Удалить расписание на день"
         android:textColor="@color/green_black"
         app:layout_constraintBottom_toTopOf="@+id/BtnDelSub"
         app:layout_constraintEnd_toEndOf="parent" />

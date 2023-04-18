@@ -14,23 +14,18 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.example.my.R;
-import com.example.my.ui.BasaData.DBHelper_Sub;
-import com.example.my.ui.subjects.CustomDialog;
+import com.example.my.ui.BasaData.DBHelper;
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
 
 public class ClearFragment extends Fragment implements View.OnClickListener {
-    Button bS, bR, bA, bSO, bHO, bH;
+    Button bS, bR, bA, bSO, bHO, bH, bRO;
     Dialog dialog;
-    Spinner spin, spind;
-    DBHelper_Sub dbHelper;
-    String itemSub, itemDay;
+    Spinner spin, spind, spinr;
+    DBHelper dbHelper;
+    String itemSub, itemDay, itemRas;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,9 +43,11 @@ public class ClearFragment extends Fragment implements View.OnClickListener {
         bHO.setOnClickListener(this);
         bH = view.findViewById(R.id.BtnDelHW);
         bH.setOnClickListener(this);
+        bRO = view.findViewById(R.id.BtnDelRasOne);
+        bRO.setOnClickListener(this);
 
         spin = view.findViewById(R.id.spinnerSubDel);
-        dbHelper = new DBHelper_Sub(getContext());
+        dbHelper = new DBHelper(getContext());
         ArrayList<String> NamesList = new ArrayList<>(dbHelper.ReadSub(getContext()));
         String[] sm = NamesList.toArray(new String[0]);
         ArrayAdapter<String> adapterDay = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, sm);
@@ -88,6 +85,25 @@ public class ClearFragment extends Fragment implements View.OnClickListener {
 
         spind.setOnItemSelectedListener(itemSelectedListenerDay);
 
+        spinr = view.findViewById(R.id.spinnerRasOneDel);
+        ArrayList<String> NamesListRas = new ArrayList<>(dbHelper.ReadDay(getContext()));
+        String[] smread = NamesListRas.toArray(new String[0]);
+        ArrayAdapter<String> adapterRas = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, smread);
+        adapterRas.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinr.setAdapter(adapterRas);
+
+        AdapterView.OnItemSelectedListener itemSelectedListenerRas = new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                itemRas = (String)parent.getItemAtPosition(position);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        };
+
+        spinr.setOnItemSelectedListener(itemSelectedListenerRas);
+
         dialog = new Dialog(getContext());
 
         return view;
@@ -119,6 +135,10 @@ public class ClearFragment extends Fragment implements View.OnClickListener {
             }
             case R.id.BtnDelHW:{
                 selectedDel = bH.getText().toString();
+                break;
+            }
+            case R.id.BtnDelRasOne:{
+                selectedDel = bRO.getText().toString() + "//" + itemRas;
                 break;
             }
 

@@ -74,6 +74,7 @@
         android:ems="10"
         android:inputType="textMultiLine"
         android:singleLine="false"
+        android:scrollbars="vertical"
 
         android:text=""
         android:hint="@string/Dob_add"

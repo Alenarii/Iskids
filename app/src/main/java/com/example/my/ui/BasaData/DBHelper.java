@@ -12,7 +12,7 @@ import com.example.my.R;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class DBHelper_Sub  extends SQLiteOpenHelper{
+public class DBHelper extends SQLiteOpenHelper{
 
     ArrayList<String> Day_Name = new ArrayList<String>(6);
 
@@ -67,7 +67,7 @@ public class DBHelper_Sub  extends SQLiteOpenHelper{
     public static final String KEY_RAS_HW_YN_5 = "homeworkFriYesNo";
     public static final String KEY_RAS_HW_YN_6 = "homeworkSatYesNo";
 
-    public DBHelper_Sub(Context context) {
+    public DBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         Day_Name.add("Понедельник");Day_Name.add("Вторник");Day_Name.add("Среда");Day_Name.add("Четверг");Day_Name.add("Пятница");Day_Name.add("Суббота");
     }
@@ -98,11 +98,11 @@ public class DBHelper_Sub  extends SQLiteOpenHelper{
             Toast.makeText(v, R.string.AddSubToastNo, Toast.LENGTH_SHORT).show();
         }else {
             ContentValues contentValues = new ContentValues();
-            contentValues.put(DBHelper_Sub.KEY_SUB, name.trim());
-            contentValues.put(DBHelper_Sub.KEY_CAB, cab);
-            contentValues.put(DBHelper_Sub.KEY_TEACHER, teacher);
-            contentValues.put(DBHelper_Sub.KEY_DOP, dop);
-            database.insert(DBHelper_Sub.TABLE_CONTACTS, null, contentValues);
+            contentValues.put(DBHelper.KEY_SUB, name.trim());
+            contentValues.put(DBHelper.KEY_CAB, cab);
+            contentValues.put(DBHelper.KEY_TEACHER, teacher);
+            contentValues.put(DBHelper.KEY_DOP, dop);
+            database.insert(DBHelper.TABLE_CONTACTS, null, contentValues);
             Toast.makeText(v, R.string.AddSubToast, Toast.LENGTH_SHORT).show();
         }
         cursor.close();
@@ -118,9 +118,9 @@ public class DBHelper_Sub  extends SQLiteOpenHelper{
             if(cursor.getCount() > 0) {
                 Toast.makeText(v, "Такой номер урока уже есть", Toast.LENGTH_SHORT).show();
             }else {
-            contentValues.put(DBHelper_Sub.KEY_NOM_1, nom);
-            contentValues.put(DBHelper_Sub.KEY_RAS_SUB_1, sub);
-            database.insert(DBHelper_Sub.TABLE_RAS_1, null, contentValues);
+            contentValues.put(DBHelper.KEY_NOM_1, nom);
+            contentValues.put(DBHelper.KEY_RAS_SUB_1, sub);
+            database.insert(DBHelper.TABLE_RAS_1, null, contentValues);
                 Toast.makeText(v, "Вы успешно добавили предмет в расписание", Toast.LENGTH_SHORT).show();}
         }
         else if (index == 1){
@@ -128,9 +128,9 @@ public class DBHelper_Sub  extends SQLiteOpenHelper{
             if(cursor.getCount() > 0) {
                 Toast.makeText(v, "Такой номер урока уже есть", Toast.LENGTH_SHORT).show();
             }else {
-            contentValues.put(DBHelper_Sub.KEY_NOM_2, nom);
-            contentValues.put(DBHelper_Sub.KEY_RAS_SUB_2, sub);
-            database.insert(DBHelper_Sub.TABLE_RAS_2, null, contentValues);
+            contentValues.put(DBHelper.KEY_NOM_2, nom);
+            contentValues.put(DBHelper.KEY_RAS_SUB_2, sub);
+            database.insert(DBHelper.TABLE_RAS_2, null, contentValues);
                 Toast.makeText(v, "Вы успешно добавили предмет в расписание", Toast.LENGTH_SHORT).show();}
         }
         else if (index == 2){
@@ -138,9 +138,9 @@ public class DBHelper_Sub  extends SQLiteOpenHelper{
             if(cursor.getCount() > 0) {
                 Toast.makeText(v, "Такой номер урока уже есть", Toast.LENGTH_SHORT).show();
             }else {
-            contentValues.put(DBHelper_Sub.KEY_NOM_3, nom);
-            contentValues.put(DBHelper_Sub.KEY_RAS_SUB_3, sub);
-            database.insert(DBHelper_Sub.TABLE_RAS_3, null, contentValues);
+            contentValues.put(DBHelper.KEY_NOM_3, nom);
+            contentValues.put(DBHelper.KEY_RAS_SUB_3, sub);
+            database.insert(DBHelper.TABLE_RAS_3, null, contentValues);
                 Toast.makeText(v, "Вы успешно добавили предмет в расписание", Toast.LENGTH_SHORT).show();}
         }
         else if (index == 3){
@@ -148,9 +148,9 @@ public class DBHelper_Sub  extends SQLiteOpenHelper{
             if(cursor.getCount() > 0) {
                 Toast.makeText(v, "Такой номер урока уже есть", Toast.LENGTH_SHORT).show();
             }else {
-            contentValues.put(DBHelper_Sub.KEY_NOM_4, nom);
-            contentValues.put(DBHelper_Sub.KEY_RAS_SUB_4, sub);
-            database.insert(DBHelper_Sub.TABLE_RAS_4, null, contentValues);
+            contentValues.put(DBHelper.KEY_NOM_4, nom);
+            contentValues.put(DBHelper.KEY_RAS_SUB_4, sub);
+            database.insert(DBHelper.TABLE_RAS_4, null, contentValues);
                 Toast.makeText(v, "Вы успешно добавили предмет в расписание", Toast.LENGTH_SHORT).show();}
         }
         else if (index == 4){
@@ -158,9 +158,9 @@ public class DBHelper_Sub  extends SQLiteOpenHelper{
             if(cursor.getCount() > 0) {
                 Toast.makeText(v, "Такой номер урока уже есть", Toast.LENGTH_SHORT).show();
             }else {
-            contentValues.put(DBHelper_Sub.KEY_NOM_5, nom);
-            contentValues.put(DBHelper_Sub.KEY_RAS_SUB_5, sub);
-            database.insert(DBHelper_Sub.TABLE_RAS_5, null, contentValues);
+            contentValues.put(DBHelper.KEY_NOM_5, nom);
+            contentValues.put(DBHelper.KEY_RAS_SUB_5, sub);
+            database.insert(DBHelper.TABLE_RAS_5, null, contentValues);
                 Toast.makeText(v, "Вы успешно добавили предмет в расписание", Toast.LENGTH_SHORT).show();}
         }
         else if (index == 5){
@@ -168,9 +168,9 @@ public class DBHelper_Sub  extends SQLiteOpenHelper{
             if(cursor.getCount() > 0) {
                 Toast.makeText(v, "Такой номер урока уже есть", Toast.LENGTH_SHORT).show();
             }else {
-            contentValues.put(DBHelper_Sub.KEY_NOM_6, nom);
-            contentValues.put(DBHelper_Sub.KEY_RAS_SUB_6, sub);
-            database.insert(DBHelper_Sub.TABLE_RAS_6, null, contentValues);
+            contentValues.put(DBHelper.KEY_NOM_6, nom);
+            contentValues.put(DBHelper.KEY_RAS_SUB_6, sub);
+            database.insert(DBHelper.TABLE_RAS_6, null, contentValues);
                 Toast.makeText(v, "Вы успешно добавили предмет в расписание", Toast.LENGTH_SHORT).show();}
         }
         database.close();
@@ -182,44 +182,44 @@ public class DBHelper_Sub  extends SQLiteOpenHelper{
         int index = Day_Name.indexOf(day);
 
         if (index == 0){
-            contentValues.put(DBHelper_Sub.KEY_RAS_HW_1, hw);
-            contentValues.put(DBHelper_Sub.KEY_RAS_HW_YN_1, "0");
-            database.update(DBHelper_Sub.TABLE_RAS_1, contentValues, "subMon = ?", new String[]{sub});
+            contentValues.put(DBHelper.KEY_RAS_HW_1, hw);
+            contentValues.put(DBHelper.KEY_RAS_HW_YN_1, "0");
+            database.update(DBHelper.TABLE_RAS_1, contentValues, "subMon = ?", new String[]{sub});
         }
         else if (index == 1){
-            contentValues.put(DBHelper_Sub.KEY_RAS_HW_2, hw);
-            contentValues.put(DBHelper_Sub.KEY_RAS_HW_YN_2, "0");
-            database.update(DBHelper_Sub.TABLE_RAS_2, contentValues, "subTue = ?", new String[]{sub});
+            contentValues.put(DBHelper.KEY_RAS_HW_2, hw);
+            contentValues.put(DBHelper.KEY_RAS_HW_YN_2, "0");
+            database.update(DBHelper.TABLE_RAS_2, contentValues, "subTue = ?", new String[]{sub});
         }
         else if (index == 2){
-            contentValues.put(DBHelper_Sub.KEY_RAS_HW_3, hw);
-            contentValues.put(DBHelper_Sub.KEY_RAS_HW_YN_3, "0");
-            database.update(DBHelper_Sub.TABLE_RAS_3, contentValues, "subWed = ?", new String[]{sub});
+            contentValues.put(DBHelper.KEY_RAS_HW_3, hw);
+            contentValues.put(DBHelper.KEY_RAS_HW_YN_3, "0");
+            database.update(DBHelper.TABLE_RAS_3, contentValues, "subWed = ?", new String[]{sub});
         }
         else if (index == 3){
-            contentValues.put(DBHelper_Sub.KEY_RAS_HW_4, hw);
-            contentValues.put(DBHelper_Sub.KEY_RAS_HW_YN_4, "0");
-            database.update(DBHelper_Sub.TABLE_RAS_4, contentValues, "subThu = ?", new String[]{sub});
+            contentValues.put(DBHelper.KEY_RAS_HW_4, hw);
+            contentValues.put(DBHelper.KEY_RAS_HW_YN_4, "0");
+            database.update(DBHelper.TABLE_RAS_4, contentValues, "subThu = ?", new String[]{sub});
         }
         else if (index == 4){
-            contentValues.put(DBHelper_Sub.KEY_RAS_HW_5, hw);
-            contentValues.put(DBHelper_Sub.KEY_RAS_HW_YN_5, "0");
-            database.update(DBHelper_Sub.TABLE_RAS_5, contentValues, "subFri = ?", new String[]{sub});
+            contentValues.put(DBHelper.KEY_RAS_HW_5, hw);
+            contentValues.put(DBHelper.KEY_RAS_HW_YN_5, "0");
+            database.update(DBHelper.TABLE_RAS_5, contentValues, "subFri = ?", new String[]{sub});
         }
         else if (index == 5){
-            contentValues.put(DBHelper_Sub.KEY_RAS_HW_6, hw);
-            contentValues.put(DBHelper_Sub.KEY_RAS_HW_YN_6, "0");
-            database.update(DBHelper_Sub.TABLE_RAS_6, contentValues, "subSat = ?", new String[]{sub});
+            contentValues.put(DBHelper.KEY_RAS_HW_6, hw);
+            contentValues.put(DBHelper.KEY_RAS_HW_YN_6, "0");
+            database.update(DBHelper.TABLE_RAS_6, contentValues, "subSat = ?", new String[]{sub});
         }
         database.close();
     }
 
     public ArrayList<String> ReadSub(Context v){ // для чтения предмета
-        SQLiteDatabase database = DBHelper_Sub.this.getWritableDatabase();
-        Cursor cursor = database.query(DBHelper_Sub.TABLE_CONTACTS, null, null, null, null, null, null);
+        SQLiteDatabase database = DBHelper.this.getWritableDatabase();
+        Cursor cursor = database.query(DBHelper.TABLE_CONTACTS, null, null, null, null, null, null);
         ArrayList<String> tex = new ArrayList<>();
         if (cursor.moveToFirst()) {
-            int subIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_SUB);
+            int subIndex = cursor.getColumnIndex(DBHelper.KEY_SUB);
             do {
                 tex.add(cursor.getString(subIndex));
             } while (cursor.moveToNext());
@@ -235,13 +235,13 @@ public class DBHelper_Sub  extends SQLiteOpenHelper{
     public ArrayList<String> Get(Context v, String nameSub){ //для диалогового окна
 
         SQLiteDatabase database = this.getWritableDatabase();
-        Cursor cursor = database.query(DBHelper_Sub.TABLE_CONTACTS, null, null, null, null, null, null);
+        Cursor cursor = database.query(DBHelper.TABLE_CONTACTS, null, null, null, null, null, null);
         ArrayList<String> tex = new ArrayList<>();
         if (cursor.moveToFirst()) {
-            int subIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_SUB);
-            int teacherIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_TEACHER);
-            int cabIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_CAB);
-            int dopIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_DOP);
+            int subIndex = cursor.getColumnIndex(DBHelper.KEY_SUB);
+            int teacherIndex = cursor.getColumnIndex(DBHelper.KEY_TEACHER);
+            int cabIndex = cursor.getColumnIndex(DBHelper.KEY_CAB);
+            int dopIndex = cursor.getColumnIndex(DBHelper.KEY_DOP);
             do {
                 if (Objects.equals(cursor.getString(subIndex).trim(), nameSub.trim())){
                     tex.add(cursor.getString(teacherIndex));
@@ -255,72 +255,72 @@ public class DBHelper_Sub  extends SQLiteOpenHelper{
     }
 
     public ArrayList<String> GetByDay(Context context, String day){ //Для чтения дня полностью
-        SQLiteDatabase database = DBHelper_Sub.this.getWritableDatabase();
+        SQLiteDatabase database = DBHelper.this.getWritableDatabase();
         int index = Day_Name.indexOf(day);
         Cursor cursor;
         ArrayList<String> tex = new ArrayList<String>();
         if (index == 0){
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_1, null, null, null, null, null, DBHelper_Sub.KEY_NOM_1);
+            cursor = database.query(DBHelper.TABLE_RAS_1, null, null, null, null, null, DBHelper.KEY_NOM_1);
             if (cursor.moveToFirst()) {
-                int subIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_SUB_1);
-                int nomIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_NOM_1);
-                int howIndex =  cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_HW_1);
-                int ynIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_HW_YN_1);
+                int subIndex = cursor.getColumnIndex(DBHelper.KEY_RAS_SUB_1);
+                int nomIndex = cursor.getColumnIndex(DBHelper.KEY_NOM_1);
+                int howIndex =  cursor.getColumnIndex(DBHelper.KEY_RAS_HW_1);
+                int ynIndex = cursor.getColumnIndex(DBHelper.KEY_RAS_HW_YN_1);
                 do {
                     tex.add(cursor.getString(ynIndex));
                 } while (cursor.moveToNext());
         }
         }
         else if (index == 1){
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_2, null, null, null, null, null, DBHelper_Sub.KEY_NOM_2);
+            cursor = database.query(DBHelper.TABLE_RAS_2, null, null, null, null, null, DBHelper.KEY_NOM_2);
             if (cursor.moveToFirst()) {
-                int subIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_SUB_2);
-                int nomIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_NOM_2);
-                int howIndex =  cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_HW_2);
+                int subIndex = cursor.getColumnIndex(DBHelper.KEY_RAS_SUB_2);
+                int nomIndex = cursor.getColumnIndex(DBHelper.KEY_NOM_2);
+                int howIndex =  cursor.getColumnIndex(DBHelper.KEY_RAS_HW_2);
                 do {
                     tex.add(cursor.getString(nomIndex) + " " + cursor.getString(subIndex) + " " + cursor.getString(howIndex));
                 } while (cursor.moveToNext());
             }
         }
         else if (index == 2){
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_3, null, null, null, null, null, DBHelper_Sub.KEY_NOM_3);
+            cursor = database.query(DBHelper.TABLE_RAS_3, null, null, null, null, null, DBHelper.KEY_NOM_3);
             if (cursor.moveToFirst()) {
-                int subIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_SUB_3);
-                int nomIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_NOM_3);
-                int howIndex =  cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_HW_3);
+                int subIndex = cursor.getColumnIndex(DBHelper.KEY_RAS_SUB_3);
+                int nomIndex = cursor.getColumnIndex(DBHelper.KEY_NOM_3);
+                int howIndex =  cursor.getColumnIndex(DBHelper.KEY_RAS_HW_3);
                 do {
                     tex.add(cursor.getString(nomIndex) + " " + cursor.getString(subIndex) + " " + cursor.getString(howIndex));
                 } while (cursor.moveToNext());
             }
         }
         else if (index == 3){
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_4, null, null, null, null, null, DBHelper_Sub.KEY_NOM_4);
+            cursor = database.query(DBHelper.TABLE_RAS_4, null, null, null, null, null, DBHelper.KEY_NOM_4);
             if (cursor.moveToFirst()) {
-                int subIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_SUB_4);
-                int nomIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_NOM_4);
-                int howIndex =  cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_HW_4);
+                int subIndex = cursor.getColumnIndex(DBHelper.KEY_RAS_SUB_4);
+                int nomIndex = cursor.getColumnIndex(DBHelper.KEY_NOM_4);
+                int howIndex =  cursor.getColumnIndex(DBHelper.KEY_RAS_HW_4);
                 do {
                     tex.add(cursor.getString(nomIndex) + " " + cursor.getString(subIndex) + " " + cursor.getString(howIndex));
                 } while (cursor.moveToNext());
             }
         }
         else if (index == 4){
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_5, null, null, null, null, null, DBHelper_Sub.KEY_NOM_5);
+            cursor = database.query(DBHelper.TABLE_RAS_5, null, null, null, null, null, DBHelper.KEY_NOM_5);
             if (cursor.moveToFirst()) {
-                int subIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_SUB_5);
-                int nomIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_NOM_5);
-                int howIndex =  cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_HW_5);
+                int subIndex = cursor.getColumnIndex(DBHelper.KEY_RAS_SUB_5);
+                int nomIndex = cursor.getColumnIndex(DBHelper.KEY_NOM_5);
+                int howIndex =  cursor.getColumnIndex(DBHelper.KEY_RAS_HW_5);
                 do {
                     tex.add(cursor.getString(nomIndex) + " " + cursor.getString(subIndex) + " " + cursor.getString(howIndex));
                 } while (cursor.moveToNext());
             }
         }
         else {
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_6, null, null, null, null, null, DBHelper_Sub.KEY_NOM_6);
+            cursor = database.query(DBHelper.TABLE_RAS_6, null, null, null, null, null, DBHelper.KEY_NOM_6);
             if (cursor.moveToFirst()) {
-                int subIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_SUB_6);
-                int nomIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_NOM_6);
-                int howIndex =  cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_HW_6);
+                int subIndex = cursor.getColumnIndex(DBHelper.KEY_RAS_SUB_6);
+                int nomIndex = cursor.getColumnIndex(DBHelper.KEY_NOM_6);
+                int howIndex =  cursor.getColumnIndex(DBHelper.KEY_RAS_HW_6);
                 do {
                     tex.add(cursor.getString(nomIndex) + " " + cursor.getString(subIndex) + " " + cursor.getString(howIndex));
                 } while (cursor.moveToNext());
@@ -330,73 +330,73 @@ public class DBHelper_Sub  extends SQLiteOpenHelper{
         return tex;
     }
 
-    public ArrayList<String> GetByDayOnlyHomeW(Context context, String day, String sub){
-        SQLiteDatabase database = DBHelper_Sub.this.getWritableDatabase();
+    public String GetByDayOnlyHomeW(Context context, String day, String sub){
+        SQLiteDatabase database = DBHelper.this.getWritableDatabase();
         int index = Day_Name.indexOf(day);
         Cursor cursor;
-        ArrayList<String> tex = new ArrayList<String>();
+        String tex = "";
 
         if (index == 0){
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_1, null, null, null, null, null, null);
+            cursor = database.query(DBHelper.TABLE_RAS_1, null, null, null, null, null, null);
             if (cursor.moveToFirst()) {
-                int subIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_SUB_1);
-                int howIndex =  cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_HW_1);
+                int subIndex = cursor.getColumnIndex(DBHelper.KEY_RAS_SUB_1);
+                int howIndex =  cursor.getColumnIndex(DBHelper.KEY_RAS_HW_1);
                 do {
-                    if (Objects.equals(cursor.getString(subIndex).trim(), sub) && !Objects.equals(cursor.getString(howIndex), null)) tex.add(cursor.getString(howIndex));
+                    if (Objects.equals(cursor.getString(subIndex).trim(), sub) && !Objects.equals(cursor.getString(howIndex), null)) tex = (cursor.getString(howIndex));
                 } while (cursor.moveToNext());
             }
         }
         else if (index == 1){
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_2, null, null, null, null, null, DBHelper_Sub.KEY_NOM_2);
+            cursor = database.query(DBHelper.TABLE_RAS_2, null, null, null, null, null, DBHelper.KEY_NOM_2);
             if (cursor.moveToFirst()) {
-                int subIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_SUB_2);
-                int howIndex =  cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_HW_2);
+                int subIndex = cursor.getColumnIndex(DBHelper.KEY_RAS_SUB_2);
+                int howIndex =  cursor.getColumnIndex(DBHelper.KEY_RAS_HW_2);
                 do {
-                    if (Objects.equals(cursor.getString(subIndex).trim(), sub) && !Objects.equals(cursor.getString(howIndex), null)) tex.add(cursor.getString(howIndex));
+                    if (Objects.equals(cursor.getString(subIndex).trim(), sub) && !Objects.equals(cursor.getString(howIndex), null)) tex = (cursor.getString(howIndex));
                 } while (cursor.moveToNext());
             }
         }
         else if (index == 2){
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_3, null, null, null, null, null, DBHelper_Sub.KEY_NOM_3);
+            cursor = database.query(DBHelper.TABLE_RAS_3, null, null, null, null, null, DBHelper.KEY_NOM_3);
             if (cursor.moveToFirst()) {
-                int subIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_SUB_3);
-                int nomIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_NOM_3);
-                int howIndex =  cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_HW_3);
+                int subIndex = cursor.getColumnIndex(DBHelper.KEY_RAS_SUB_3);
+                int nomIndex = cursor.getColumnIndex(DBHelper.KEY_NOM_3);
+                int howIndex =  cursor.getColumnIndex(DBHelper.KEY_RAS_HW_3);
                 do {
-                    if (Objects.equals(cursor.getString(subIndex).trim(), sub) && !Objects.equals(cursor.getString(howIndex), null)) tex.add(cursor.getString(howIndex));
+                    if (Objects.equals(cursor.getString(subIndex).trim(), sub) && !Objects.equals(cursor.getString(howIndex), null)) tex = (cursor.getString(howIndex));
                 } while (cursor.moveToNext());
             }
         }
         else if (index == 3){
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_4, null, null, null, null, null, DBHelper_Sub.KEY_NOM_4);
+            cursor = database.query(DBHelper.TABLE_RAS_4, null, null, null, null, null, DBHelper.KEY_NOM_4);
             if (cursor.moveToFirst()) {
-                int subIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_SUB_4);
-                int nomIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_NOM_4);
-                int howIndex =  cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_HW_4);
+                int subIndex = cursor.getColumnIndex(DBHelper.KEY_RAS_SUB_4);
+                int nomIndex = cursor.getColumnIndex(DBHelper.KEY_NOM_4);
+                int howIndex =  cursor.getColumnIndex(DBHelper.KEY_RAS_HW_4);
                 do {
-                    if (Objects.equals(cursor.getString(subIndex).trim(), sub) && !Objects.equals(cursor.getString(howIndex), null)) tex.add(cursor.getString(howIndex));
+                    if (Objects.equals(cursor.getString(subIndex).trim(), sub) && !Objects.equals(cursor.getString(howIndex), null)) tex =(cursor.getString(howIndex));
                 } while (cursor.moveToNext());
             }
         }
         else if (index == 4){
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_5, null, null, null, null, null, DBHelper_Sub.KEY_NOM_5);
+            cursor = database.query(DBHelper.TABLE_RAS_5, null, null, null, null, null, DBHelper.KEY_NOM_5);
             if (cursor.moveToFirst()) {
-                int subIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_SUB_5);
-                int nomIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_NOM_5);
-                int howIndex =  cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_HW_5);
+                int subIndex = cursor.getColumnIndex(DBHelper.KEY_RAS_SUB_5);
+                int nomIndex = cursor.getColumnIndex(DBHelper.KEY_NOM_5);
+                int howIndex =  cursor.getColumnIndex(DBHelper.KEY_RAS_HW_5);
                 do {
-                    if (Objects.equals(cursor.getString(subIndex).trim(), sub) && !Objects.equals(cursor.getString(howIndex), null)) tex.add(cursor.getString(howIndex));
+                    if (Objects.equals(cursor.getString(subIndex).trim(), sub) && !Objects.equals(cursor.getString(howIndex), null)) tex = (cursor.getString(howIndex));
                 } while (cursor.moveToNext());
             }
         }
         else {
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_6, null, null, null, null, null, DBHelper_Sub.KEY_NOM_6);
+            cursor = database.query(DBHelper.TABLE_RAS_6, null, null, null, null, null, DBHelper.KEY_NOM_6);
             if (cursor.moveToFirst()) {
-                int subIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_SUB_6);
-                int nomIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_NOM_6);
-                int howIndex =  cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_HW_6);
+                int subIndex = cursor.getColumnIndex(DBHelper.KEY_RAS_SUB_6);
+                int nomIndex = cursor.getColumnIndex(DBHelper.KEY_NOM_6);
+                int howIndex =  cursor.getColumnIndex(DBHelper.KEY_RAS_HW_6);
                 do {
-                    if (Objects.equals(cursor.getString(subIndex).trim(), sub) && !Objects.equals(cursor.getString(howIndex), null)) tex.add(cursor.getString(howIndex));
+                    if (Objects.equals(cursor.getString(subIndex).trim(), sub) && !Objects.equals(cursor.getString(howIndex), null)) tex =(cursor.getString(howIndex));
                 } while (cursor.moveToNext());
             }
         }
@@ -404,14 +404,14 @@ public class DBHelper_Sub  extends SQLiteOpenHelper{
         return tex;
     }
     public ArrayList<String> GetByDayOnlySub(Context context, String day){ //Для чтения дня полностью
-        SQLiteDatabase database = DBHelper_Sub.this.getWritableDatabase();
+        SQLiteDatabase database = DBHelper.this.getWritableDatabase();
         int index = Day_Name.indexOf(day);
         Cursor cursor;
         ArrayList<String> tex = new ArrayList<String>();
         if (index == 0){
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_1, null, null, null, null, null, DBHelper_Sub.KEY_NOM_1);
+            cursor = database.query(DBHelper.TABLE_RAS_1, null, null, null, null, null, DBHelper.KEY_NOM_1);
             if (cursor.moveToFirst()) {
-                int subIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_SUB_1);
+                int subIndex = cursor.getColumnIndex(DBHelper.KEY_RAS_SUB_1);
                 do {
                     tex.add(cursor.getString(subIndex));
                 } while (cursor.moveToNext());
@@ -419,45 +419,45 @@ public class DBHelper_Sub  extends SQLiteOpenHelper{
             }
         }
         else if (index == 1){
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_2, null, null, null, null, null, DBHelper_Sub.KEY_NOM_2);
+            cursor = database.query(DBHelper.TABLE_RAS_2, null, null, null, null, null, DBHelper.KEY_NOM_2);
             if (cursor.moveToFirst()) {
-                int subIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_SUB_2);
+                int subIndex = cursor.getColumnIndex(DBHelper.KEY_RAS_SUB_2);
                 do {
                     tex.add(cursor.getString(subIndex));
                 } while (cursor.moveToNext());
             }
         }
         if (index == 2){
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_3, null, null, null, null, null, DBHelper_Sub.KEY_NOM_3);
+            cursor = database.query(DBHelper.TABLE_RAS_3, null, null, null, null, null, DBHelper.KEY_NOM_3);
             if (cursor.moveToFirst()) {
-                int subIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_SUB_3);
+                int subIndex = cursor.getColumnIndex(DBHelper.KEY_RAS_SUB_3);
                 do {
                     tex.add(cursor.getString(subIndex));
                 } while (cursor.moveToNext());
             }
         }
         else if (index == 3){
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_4, null, null, null, null, null, DBHelper_Sub.KEY_NOM_4);
+            cursor = database.query(DBHelper.TABLE_RAS_4, null, null, null, null, null, DBHelper.KEY_NOM_4);
             if (cursor.moveToFirst()) {
-                int subIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_SUB_4);
+                int subIndex = cursor.getColumnIndex(DBHelper.KEY_RAS_SUB_4);
                 do {
                     tex.add(cursor.getString(subIndex));
                 } while (cursor.moveToNext());
             }
         }
         if (index == 4){
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_5, null, null, null, null, null, DBHelper_Sub.KEY_NOM_5);
+            cursor = database.query(DBHelper.TABLE_RAS_5, null, null, null, null, null, DBHelper.KEY_NOM_5);
             if (cursor.moveToFirst()) {
-                int subIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_SUB_5);
+                int subIndex = cursor.getColumnIndex(DBHelper.KEY_RAS_SUB_5);
                 do {
                     tex.add(cursor.getString(subIndex));
                 } while (cursor.moveToNext());
             }
         }
         else {
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_6, null, null, null, null, null, DBHelper_Sub.KEY_NOM_6);
+            cursor = database.query(DBHelper.TABLE_RAS_6, null, null, null, null, null, DBHelper.KEY_NOM_6);
             if (cursor.moveToFirst()) {
-                int subIndex = cursor.getColumnIndex(DBHelper_Sub.KEY_RAS_SUB_6);
+                int subIndex = cursor.getColumnIndex(DBHelper.KEY_RAS_SUB_6);
                 do {
                     tex.add(cursor.getString(subIndex));
                 } while (cursor.moveToNext());
@@ -469,17 +469,28 @@ public class DBHelper_Sub  extends SQLiteOpenHelper{
 
     public void CleanSub(){
         SQLiteDatabase database = this.getWritableDatabase();
-        database.delete(DBHelper_Sub.TABLE_CONTACTS, null, null);
+        database.delete(DBHelper.TABLE_CONTACTS, null, null);
         database.close();
     }
     public void CleanRas(){
         SQLiteDatabase database = this.getWritableDatabase();
-        database.delete(DBHelper_Sub.TABLE_RAS_1, null, null);
-        database.delete(DBHelper_Sub.TABLE_RAS_2, null, null);
-        database.delete(DBHelper_Sub.TABLE_RAS_3, null, null);
-        database.delete(DBHelper_Sub.TABLE_RAS_4, null, null);
-        database.delete(DBHelper_Sub.TABLE_RAS_5, null, null);
-        database.delete(DBHelper_Sub.TABLE_RAS_6, null, null);
+        database.delete(DBHelper.TABLE_RAS_1, null, null);
+        database.delete(DBHelper.TABLE_RAS_2, null, null);
+        database.delete(DBHelper.TABLE_RAS_3, null, null);
+        database.delete(DBHelper.TABLE_RAS_4, null, null);
+        database.delete(DBHelper.TABLE_RAS_5, null, null);
+        database.delete(DBHelper.TABLE_RAS_6, null, null);
+        database.close();
+    }
+    public void CleanRasOne(String day){
+        int index = Day_Name.indexOf(day);
+        SQLiteDatabase database = this.getWritableDatabase();
+        if (index == 0) database.delete(DBHelper.TABLE_RAS_1, null, null);
+        if (index == 1) database.delete(DBHelper.TABLE_RAS_2, null, null);
+        if (index == 2) database.delete(DBHelper.TABLE_RAS_3, null, null);
+        if (index == 3) database.delete(DBHelper.TABLE_RAS_4, null, null);
+        if (index == 4) database.delete(DBHelper.TABLE_RAS_5, null, null);
+        if (index == 5) database.delete(DBHelper.TABLE_RAS_6, null, null);
         database.close();
     }
     public void CleanSubOne(Context context, String sub){
@@ -487,13 +498,13 @@ public class DBHelper_Sub  extends SQLiteOpenHelper{
         database.delete(TABLE_CONTACTS, "namesub=?", new String[]{sub});
         database.close();
     }
-    public void CleanHWOne(String day){
+    public void CleanHWOne(String day) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         int index = Day_Name.indexOf(day);
         Cursor cursor;
         if (index == 0){
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_1, null, null, null, null, null, null);
+            cursor = database.query(DBHelper.TABLE_RAS_1, null, null, null, null, null, null);
             if (cursor.moveToFirst()) {
                 do {
                     cv.put(KEY_RAS_HW_1, "");
@@ -503,7 +514,7 @@ public class DBHelper_Sub  extends SQLiteOpenHelper{
             }
         }
         else if (index == 1){
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_2, null, null, null, null, null, DBHelper_Sub.KEY_NOM_2);
+            cursor = database.query(DBHelper.TABLE_RAS_2, null, null, null, null, null, DBHelper.KEY_NOM_2);
             if (cursor.moveToFirst()) {
                 do {
                     cv.put(KEY_RAS_HW_2, "");
@@ -513,7 +524,7 @@ public class DBHelper_Sub  extends SQLiteOpenHelper{
             }
         }
         else if (index == 2){
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_3, null, null, null, null, null, DBHelper_Sub.KEY_NOM_3);
+            cursor = database.query(DBHelper.TABLE_RAS_3, null, null, null, null, null, DBHelper.KEY_NOM_3);
             if (cursor.moveToFirst()) {
                 do {
                     cv.put(KEY_RAS_HW_3, "");
@@ -523,7 +534,7 @@ public class DBHelper_Sub  extends SQLiteOpenHelper{
             }
         }
         else if (index == 3){
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_4, null, null, null, null, null, DBHelper_Sub.KEY_NOM_4);
+            cursor = database.query(DBHelper.TABLE_RAS_4, null, null, null, null, null, DBHelper.KEY_NOM_4);
             if (cursor.moveToFirst()) {
                 do {
                     cv.put(KEY_RAS_HW_4, "");
@@ -533,7 +544,7 @@ public class DBHelper_Sub  extends SQLiteOpenHelper{
             }
         }
         else if (index == 4){
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_5, null, null, null, null, null, DBHelper_Sub.KEY_NOM_5);
+            cursor = database.query(DBHelper.TABLE_RAS_5, null, null, null, null, null, DBHelper.KEY_NOM_5);
             if (cursor.moveToFirst()) {
                 do {
                     cv.put(KEY_RAS_HW_5, "");
@@ -543,7 +554,7 @@ public class DBHelper_Sub  extends SQLiteOpenHelper{
             }
         }
         else {
-            cursor = database.query(DBHelper_Sub.TABLE_RAS_6, null, null, null, null, null, DBHelper_Sub.KEY_NOM_6);
+            cursor = database.query(DBHelper.TABLE_RAS_6, null, null, null, null, null, DBHelper.KEY_NOM_6);
             if (cursor.moveToFirst()) {
                 do {
                     cv.put(KEY_RAS_HW_6, "");
@@ -566,13 +577,13 @@ public class DBHelper_Sub  extends SQLiteOpenHelper{
     }
     public void CleanAll(){
         SQLiteDatabase database = this.getWritableDatabase();
-        database.delete(DBHelper_Sub.TABLE_CONTACTS, null, null);
-        database.delete(DBHelper_Sub.TABLE_RAS_1, null, null);
-        database.delete(DBHelper_Sub.TABLE_RAS_2, null, null);
-        database.delete(DBHelper_Sub.TABLE_RAS_3, null, null);
-        database.delete(DBHelper_Sub.TABLE_RAS_4, null, null);
-        database.delete(DBHelper_Sub.TABLE_RAS_5, null, null);
-        database.delete(DBHelper_Sub.TABLE_RAS_6, null, null);
+        database.delete(DBHelper.TABLE_CONTACTS, null, null);
+        database.delete(DBHelper.TABLE_RAS_1, null, null);
+        database.delete(DBHelper.TABLE_RAS_2, null, null);
+        database.delete(DBHelper.TABLE_RAS_3, null, null);
+        database.delete(DBHelper.TABLE_RAS_4, null, null);
+        database.delete(DBHelper.TABLE_RAS_5, null, null);
+        database.delete(DBHelper.TABLE_RAS_6, null, null);
         database.close();
 
     }

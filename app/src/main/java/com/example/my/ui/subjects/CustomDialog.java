@@ -8,17 +8,17 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
 import com.example.my.R;
-import com.example.my.ui.BasaData.DBHelper_Sub;
+import com.example.my.ui.BasaData.DBHelper;
 
 import java.util.ArrayList;
 
 public class CustomDialog extends DialogFragment {
-    DBHelper_Sub dbHelper;
+    DBHelper dbHelper;
     @NonNull
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         String phone = getArguments().getString("see");
-        dbHelper = new DBHelper_Sub(getContext());
+        dbHelper = new DBHelper(getContext());
         ArrayList<String> n = dbHelper.Get(getContext(), phone);
         AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
         if (n.isEmpty()) {

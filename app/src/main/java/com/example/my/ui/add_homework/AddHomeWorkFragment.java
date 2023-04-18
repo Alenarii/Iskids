@@ -12,11 +12,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.my.R;
-import com.example.my.ui.BasaData.DBHelper_Sub;
+import com.example.my.ui.BasaData.DBHelper;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -27,14 +26,14 @@ public class AddHomeWorkFragment extends Fragment implements View.OnClickListene
     private EditText etHW;
     private Spinner spiday, spisub;
     private Button add;
-    DBHelper_Sub dbHelper;
+    DBHelper dbHelper;
     String itemSub, itemDay;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_add_home_work, container, false);
 
-        dbHelper = new DBHelper_Sub(getContext());
+        dbHelper = new DBHelper(getContext());
 
         ArrayList<String> NamesListDay = new ArrayList<>(dbHelper.ReadDay(getContext()));
         String[] smday = NamesListDay.toArray(new String[0]);

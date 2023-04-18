@@ -13,13 +13,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.my.ui.BasaData.DBHelper_Sub;
+import com.example.my.ui.BasaData.DBHelper;
 import com.example.my.R;
 
 import java.util.ArrayList;
 
 public class SubjectsFragment extends ListFragment {
-    DBHelper_Sub dbHelper;
+    DBHelper dbHelper;
     Dialog dialog;
     ArrayAdapter<String> mAdapter;
 
@@ -27,7 +27,7 @@ public class SubjectsFragment extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_subjects, container, false);
-        dbHelper = new DBHelper_Sub(getContext());
+        dbHelper = new DBHelper(getContext());
 
         ArrayList<String> NamesList = new ArrayList<>(dbHelper.ReadSub(getContext()));
 

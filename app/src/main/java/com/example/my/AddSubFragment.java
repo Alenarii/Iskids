@@ -11,7 +11,8 @@ import android.os.Bundle;
         import android.widget.EditText;
         import android.widget.TextView;
 
-import com.example.my.ui.BasaData.DBHelper_Sub;
+import com.example.my.ui.BasaData.DBHelper;
+
 
 public class AddSubFragment extends Fragment implements View.OnClickListener{
     Button btnAdd;
@@ -19,7 +20,7 @@ public class AddSubFragment extends Fragment implements View.OnClickListener{
     TextView et;
 
 
-    DBHelper_Sub dbHelper;
+    DBHelper dbHelper;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -32,13 +33,13 @@ public class AddSubFragment extends Fragment implements View.OnClickListener{
         etCab = (EditText)view.findViewById(R.id.AddSubCab);
         etDop = (EditText)view.findViewById(R.id.AddSubDop);
 
-        dbHelper = new DBHelper_Sub(getContext());
+        dbHelper = new DBHelper(getContext());
         return view;
     }
 
     @Override
     public void onClick(View view) {
-        String name = etSub.getText().toString();
+        String name = etSub.getText().toString().substring(0, 1).toUpperCase() + etSub.getText().toString().substring(1).toLowerCase();
         String tea = etTea.getText().toString();
         String cab = etCab.getText().toString();
         String dop = etDop.getText().toString();

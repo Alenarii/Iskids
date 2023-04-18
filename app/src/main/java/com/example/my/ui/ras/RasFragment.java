@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.ListFragment;
 
 import android.view.LayoutInflater;
@@ -15,17 +14,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.my.ui.BasaData.DBHelper_Sub;
+import com.example.my.ui.BasaData.DBHelper;
 import com.example.my.R;
-import com.example.my.ui.subjects.CustomDialog;
 
 import java.util.ArrayList;
 
 public class RasFragment extends ListFragment {
-    DBHelper_Sub dbHelper;
+    DBHelper dbHelper;
     String itemDay;
     ArrayAdapter<String> mAdapter;
     Dialog dialog;
@@ -35,7 +32,7 @@ public class RasFragment extends ListFragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_ras, container, false);
 
-        dbHelper = new DBHelper_Sub(getContext());
+        dbHelper = new DBHelper(getContext());
 
         ArrayList<String> NamesListDay = new ArrayList<>(dbHelper.ReadDay(getContext()));
         String[] smday = NamesListDay.toArray(new String[0]);
@@ -80,7 +77,6 @@ public class RasFragment extends ListFragment {
 
         CustomDialogRas dialog = new CustomDialogRas();
         Bundle args = new Bundle();
-
         args.putString("ras", rrr);
         dialog.setArguments(args);
 
